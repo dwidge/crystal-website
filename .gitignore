@@ -1,0 +1,10 @@
+/node_modules
+/build
+/docs
+/dist
+/tmp
+/*lock*
+/*log*
+/.env*
+/public/images/
+/src/data/
