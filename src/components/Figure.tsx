@@ -13,8 +13,8 @@ export function Figure({
   text?: string;
 }) {
   return (
-    <a className="semidark flex" href={href} title={title}>
-      <figure className="flex">
+    <a className="dark flex center" href={href} title={title}>
+      <figure className="flex center">
         <img src={src} title={title} alt={""} />
         <figcaption className="center hover absolute-stretch semidark pad">
           <div>

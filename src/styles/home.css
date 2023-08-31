@@ -6,7 +6,7 @@
 }
 html {
   font-family: Open Sans;
-  font-size: 24px;
+  font-size: 20px;
 }
 body {
   margin: 0;
@@ -123,7 +123,6 @@ a {
   flex-direction: column;
 }
 .flex {
-  display: flex;
   flex: auto;
   position: relative;
 }
@@ -135,16 +134,29 @@ a {
 .center {
   align-items: center;
   justify-content: center;
-  display: flex;
-  flex-direction: column;
+}
+.right {
+  align-items: flex-end;
+  justify-content: center;
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.light {
+  color: black;
+  background-color: #eee;
 }
 .dark {
   background-color: #001d3b;
   color: antiquewhite;
 }
 .semidark {
-  background: #001d3b99;
+  background: #001d3bbb;
   color: antiquewhite;
+}
+.shadow {
+  box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.5);
 }
 .pad {
   padding: 1em;
@@ -152,14 +164,23 @@ a {
 .gap {
   gap: 1em;
 }
+.wide {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
 .padx {
   padding: 3em;
 }
-.button {
+.button,
+button {
+  color: white;
   background: #094b92;
+  border-style: none;
   border-radius: 2em;
-  padding: 0.5em 1em;
+  padding: 1em;
   text-transform: uppercase;
+  text-decoration: none;
 }
 .absolute-stretch {
   position: absolute;
