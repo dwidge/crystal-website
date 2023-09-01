@@ -53,7 +53,7 @@ export function App() {
     .reduce(sum, 0);
 
   return (
-    <Router>
+    <Router basename={app.root}>
       <div className="light wide flex column shadow">
         <section className="dark pad row">
           <section>
