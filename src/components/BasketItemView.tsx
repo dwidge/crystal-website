@@ -9,7 +9,7 @@ export const BasketItemView: React.FC<{
   value: State<BasketItem>;
 }> = ({ value: [value, setValue] }) => {
   return (
-    <div className="basket-item semidark pad">
+    <div className="basket-item semidark pad gap">
       <h3>{value.product.name}</h3>
       <div className="flex row gap">
         {ProductView({ value: value.product })}
@@ -20,10 +20,10 @@ export const BasketItemView: React.FC<{
           ]}
         />
       </div>
-      <div className="right">
-        {setValue ? (
-          <>
-            <label htmlFor={value.id + "_quantity"}>Quantity</label>
+      <div className="grid2">
+        <label htmlFor={value.id + "_quantity"}>Quantity</label>
+        <div className="right">
+          {setValue ? (
             <input
               id={value.id + "_quantity"}
               type="number"
@@ -34,13 +34,20 @@ export const BasketItemView: React.FC<{
                 setValue({ ...value, quantity: +e.target.value })
               }
             />
-          </>
-        ) : null}
-      </div>
-      <div className="right">
-        {value.quantity} * {app.currency}
-        {value.product.price} = {app.currency}
-        {value.product.price * value.quantity}
+          ) : null}
+        </div>
+        <div>Price</div>
+        <div className="right">
+          {value.quantity} * {app.currency}
+          {value.product.price} = {app.currency}
+          {value.product.price * value.quantity}
+        </div>
+        <div>Weight</div>
+        <div className="right">
+          {value.product.weight} * {value.quantity}
+          {" = "}
+          {value.product.weight * value.quantity}g
+        </div>
       </div>
     </div>
   );
