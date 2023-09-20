@@ -54,8 +54,8 @@ export function App() {
 
   return (
     <Router basename={app.root}>
-      <div className="light wide flex column shadow">
-        <section className="dark pad row">
+      <div className="flex column light wide shadow">
+        <section className="flex0 row spaced dark pad">
           <section>
             <h2>
               <Link to="/">{app.title}</Link>
@@ -80,7 +80,7 @@ export function App() {
             element={CheckoutForm({ basket, user, valid, submitted, total })}
           />
         </Routes>
-        <section className="flex dark pad center">© 2023 {app.title}</section>
+        <section className="flex0 dark pad center">© 2023 {app.title}</section>
       </div>
     </Router>
   );
