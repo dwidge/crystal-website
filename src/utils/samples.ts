@@ -1,7 +1,7 @@
-import dataItems from "../data/items.json";
+import dataItems from "../data/samples.json";
 import { Product } from "../types/Product.js";
 
-export const products: Product[] = dataItems.map(
+export const samples: Product[] = dataItems.map(
   ({ src, title, text, price, weight }) => ({
     id: src,
     name: title,

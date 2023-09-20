@@ -3,38 +3,38 @@ import { State } from "../types/State.js";
 import { BasketList } from "../types/BasketList.js";
 import { ProductView } from "./ProductView.js";
 import { randId } from "../utils/randId.js";
-import { products } from "./products.js";
+import { Product } from "../types/Product.js";
 
-export const ProductList: React.FC<{ value: State<BasketList> }> = ({
-  value: [{ id, items, total }, setBasket],
-}) => {
+export const ProductList: React.FC<{
+  basketState: State<BasketList>;
+  items: Product[];
+}> = ({ basketState: [basket, setBasket], items }) => {
   return (
     <section className="grid gap pad">
-      {products.map((product) => (
+      {items.map((item) => (
         <div className="flex column gap">
-          {ProductView({ value: product })}
+          {ProductView({ value: item })}
           {setBasket ? (
             <button
               onClick={() =>
                 setBasket({
-                  id,
-                  items: items.concat([
+                  ...basket,
+                  items: basket.items.concat([
                     {
                       id: randId(),
-                      product,
+                      product: item,
                       image: Promise.resolve(undefined),
                       quantity: 1,
                       subtotal: 1,
                     },
                   ]),
-                  total,
                 })
               }
             >
               Add to basket
               <Chip>
-                {items
-                  .filter(({ product: { id } }) => id === product.id)
+                {basket.items
+                  .filter(({ product: { id } }) => id === item.id)
                   .map(({ quantity }) => quantity)
                   .join("+")}
               </Chip>

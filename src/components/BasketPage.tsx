@@ -6,23 +6,23 @@ import { Link } from "react-router-dom";
 import { BasketTotals } from "./BasketTotals.js";
 
 export const BasketPage: React.FC<{
-  basket: State<BasketList>;
+  basketState: State<BasketList>;
   valid: boolean;
   total: number;
-}> = ({ basket, valid, total }) => {
-  const [basketList] = basket;
+}> = ({ basketState, valid, total }) => {
+  const [basketList] = basketState;
 
   return (
     <div className="flex column gap pad">
       {BasketTotals(basketList)}
-      {BasketListView({ value: basket, total })}
+      {BasketListView({ value: basketState, total })}
       {BasketTotals(basketList)}
       {valid ? (
         <Link className="button text-center" to="/checkout">
           Checkout
         </Link>
       ) : (
-        "Please choose an image for each item"
+        "⚠️ Please choose an image for each item"
       )}
     </div>
   );

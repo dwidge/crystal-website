@@ -10,13 +10,13 @@ export const CheckoutForm: React.FC<{
   valid: boolean;
   submitted: State<boolean>;
   total: number;
-  basket: State<BasketList>;
+  basketState: State<BasketList>;
   user: State<UserData>;
   onSubmit?: (userData: UserData, basket: BasketList) => void;
 }> = ({
   valid,
   submitted: [submitted, setSubmitted],
-  basket: [basket],
+  basketState: [basket],
   user: [userData, setUserData],
   onSubmit,
 }) => {
@@ -38,7 +38,7 @@ export const CheckoutForm: React.FC<{
         <button type="submit">Submit Order</button>
       ) : (
         <>
-          <div>Basket not ready</div>
+          <div>⚠️ Basket not ready</div>
           <Link to="/basket" className="button text-center">
             View Basket
           </Link>

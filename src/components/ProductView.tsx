@@ -10,7 +10,7 @@ export const ProductView: React.FC<{
     <Figure
       href="#"
       {...{
-        src: app.root + "/images/" + value.imageId,
+        src: app.root + "/data/" + value.imageId,
         title: value.name,
         text: value.description,
       }}

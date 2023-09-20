@@ -1,7 +1,7 @@
 import React from "react";
 import { app } from "../config.js";
 
-export function ContactUs() {
+export function ContactUsSection() {
   return (
     <div className="semidark bgimage">
       <div className="padx center text-center gap">
