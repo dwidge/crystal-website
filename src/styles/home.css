@@ -231,3 +231,7 @@ figure {
   flex: auto;
   background-color: red;
 }
+
+.carousel {
+  background: black;
+}
