@@ -12,11 +12,11 @@ export const BasketPage: React.FC<{
 }> = ({ basketState, valid, total }) => {
   const [basketList] = basketState;
 
+  if (!basketList.items.length) return <></>;
   return (
     <div className="flex column gap pad">
-      {BasketTotals(basketList)}
-      {BasketListView({ value: basketState, total })}
-      {BasketTotals(basketList)}
+      <BasketListView {...{ value: basketState, total }} />
+      <BasketTotals {...{ basket: basketList }} />
       {valid ? (
         <Link className="button text-center" to="/checkout">
           Checkout

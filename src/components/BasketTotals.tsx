@@ -3,7 +3,7 @@ import { BasketList } from "../types/BasketList.js";
 import { app } from "../config.js";
 import { getTotalPrice, getTotalWeight } from "./getTotal.js";
 
-export function BasketTotals(basket: BasketList) {
+export function BasketTotals({ basket }: { basket: BasketList }) {
   if (!basket.items.length) return <></>;
   return (
     <div className="grid2">

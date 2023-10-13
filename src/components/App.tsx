@@ -74,24 +74,31 @@ export function App() {
           </section>
         </section>
         <Routes>
-          <Route path="/" element={Home({ basketState, items: samples })} />
+          <Route
+            path="/"
+            element={<Home {...{ basketState, items: samples }} />}
+          />
           <Route
             path="/shop"
-            element={ProductList({ basketState, items: blanks })}
+            element={<ProductList {...{ basketState, items: blanks }} />}
           />
           <Route
             path="/basket"
-            element={BasketPage({ valid, basketState, total })}
+            element={<BasketPage {...{ valid, basketState, total }} />}
           />
           <Route
             path="/checkout"
-            element={CheckoutForm({
-              basketState,
-              user: userState,
-              valid,
-              submitted,
-              total,
-            })}
+            element={
+              <CheckoutForm
+                {...{
+                  basketState,
+                  user: userState,
+                  valid,
+                  submitted,
+                  total,
+                }}
+              />
+            }
           />
         </Routes>
         <ContactUsSection />

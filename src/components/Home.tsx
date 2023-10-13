@@ -14,15 +14,17 @@ export const Home: React.FC<{
 }> = ({ basketState: [basketList], items }) => {
   return (
     <>
-      {CaptureMemoriesSection()}
-      {Carousel({
-        imgs: items.map((item) => ({
-          src: app.root + "/data/" + item.imageId,
-          alt: item.name,
-        })),
-      })}
-      {ProductList({ basketState: [basketList], items })}
-      {EveryOccasionSection()}
+      <CaptureMemoriesSection />
+      <Carousel
+        {...{
+          imgs: items.map((item) => ({
+            src: app.root + "/data/" + item.imageId,
+            alt: item.name,
+          })),
+        }}
+      />
+      <ProductList {...{ basketState: [basketList], items }} />
+      <EveryOccasionSection />
     </>
   );
 };

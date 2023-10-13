@@ -12,7 +12,7 @@ export const BasketItemView: React.FC<{
     <div className="basket-item semidark pad gap">
       <h3>{value.product.name}</h3>
       <div className="flex row spaced gap">
-        {ProductView({ value: value.product })}
+        <ProductView {...{ value: value.product }} />
         <ImageView
           value={[
             value.image,

@@ -6,14 +6,9 @@ import { app } from "../config.js";
 export const ProductView: React.FC<{
   value: Product;
 }> = ({ value }) => {
-  return (
-    <Figure
-      href="#"
-      {...{
-        src: app.root + "/data/" + value.imageId,
-        title: value.name,
-        text: value.description,
-      }}
-    />
-  );
+  const src = app.root + "/data/" + value.imageId;
+  const title = value.name;
+  const text = value.description;
+
+  return <Figure {...{ href: src, src, title, text }} />;
 };

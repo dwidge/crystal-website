@@ -30,8 +30,8 @@ export const CheckoutForm: React.FC<{
       }}
       className="flex column pad gap checkout-form"
     >
-      {BasketTotals(basket)}
-      {UserDataView({ value: [userData, setUserData] })}
+      <BasketTotals {...{ basket }} />
+      <UserDataView {...{ value: [userData, setUserData] }} />
       {submitted ? (
         "Thank you. Your order is submitted. We will contact you shortly."
       ) : valid ? (

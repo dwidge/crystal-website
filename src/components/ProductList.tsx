@@ -13,7 +13,7 @@ export const ProductList: React.FC<{
     <section className="grid gap pad">
       {items.map((item) => (
         <div className="flex column gap">
-          {ProductView({ value: item })}
+          <ProductView {...{ value: item }} />
           {setBasket ? (
             <button
               onClick={() =>
