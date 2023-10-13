@@ -4,6 +4,7 @@ const {
   PUBLIC_EMAIL = "info@example.com",
   PUBLIC_PHONE = "00000000",
   PUBLIC_CURRENCY = "$",
+  PUBLIC_API_URL = "http://localhost/v1",
 } = process.env;
 
 export const app = {
@@ -13,3 +14,4 @@ export const app = {
   phone: PUBLIC_PHONE,
   currency: PUBLIC_CURRENCY,
 };
+export const api = { url: PUBLIC_API_URL };

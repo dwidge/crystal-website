@@ -30,6 +30,7 @@
     "prod": "cross-env NODE_ENV=production NODE_OPTIONS=\"-r dotenv/config\" DOTENV_CONFIG_PATH=.env npm run"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.5",
     "@dwidge/react-classy": "^0.1.1",
     "axios": "^1.4.0",
     "react": "npm:@preact/compat@^17.1.2",

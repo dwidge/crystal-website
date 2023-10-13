@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import { Home } from "./Home.js";
 import "../styles/reset.css";
 import "../styles/home.css";
-import { app } from "../config.js";
+import * as config from "../config.js";
 import { BasketPage } from "./BasketPage.js";
 import { BasketList } from "../types/BasketList.js";
 import { CheckoutForm } from "./CheckoutForm.js";
@@ -56,12 +56,12 @@ export function App() {
     .reduce(sum, 0);
 
   return (
-    <Router basename={app.root}>
+    <Router basename={config.app.root}>
       <div className="flex column light wide shadow">
         <section className="flex0 row spaced wrap dark pad">
           <section>
             <h2>
-              <Link to="/">{app.title}</Link>
+              <Link to="/">{config.app.title}</Link>
             </h2>
           </section>
           <section>
@@ -102,7 +102,9 @@ export function App() {
           />
         </Routes>
         <ContactUsSection />
-        <section className="flex0 dark pad center">© 2023 {app.title}</section>
+        <section className="flex0 dark pad center">
+          © 2023 {config.app.title}
+        </section>
       </div>
     </Router>
   );
