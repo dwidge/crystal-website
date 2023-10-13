@@ -13,7 +13,7 @@ export const Carousel = ({
   autoplay = 3000,
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [lockTimer, setLockTimer] = useState(0);
+  const lockTimer = useRef(0);
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const makeImageId = (i: number) => id + "_" + i;
@@ -32,7 +32,10 @@ export const Carousel = ({
   useEffect(() => {
     const nextSlide = () => {
       if (!autoplay) return;
-      if (lockTimer > 0) return setLockTimer((lockTimer) => lockTimer - 1);
+      if (lockTimer.current > 0) {
+        lockTimer.current--;
+        return;
+      }
 
       setActiveIndex((prevIndex) => scrollCarouselToIndex(prevIndex + 1));
     };
@@ -57,7 +60,7 @@ export const Carousel = ({
             className={activeIndex === i ? "active control" : "control"}
             onClick={(event) => {
               event.preventDefault();
-              setLockTimer(3);
+              lockTimer.current = 3;
               setActiveIndex(scrollCarouselToIndex(i));
             }}
           ></a>
