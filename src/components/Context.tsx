@@ -1,6 +1,6 @@
 import React from "react";
 import * as config from "../config.js";
-import { ApiProvider } from "../utils/api.js";
+import { ApiProvider } from "../api/api.js";
 import { App } from "./App.js";
 
 export function Context() {

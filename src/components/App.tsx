@@ -15,6 +15,7 @@ import { useIsValidBasket } from "./useIsValidBasket.js";
 import { sum } from "../utils/sum.js";
 import { ProductList } from "./ProductList.js";
 import { ContactUsSection } from "./ContactUsSection.js";
+import { AdminPage } from "./AdminPage.js";
 
 export function App() {
   const submitted = useState<boolean>(false);
@@ -78,6 +79,7 @@ export function App() {
             path="/"
             element={<Home {...{ basketState, items: samples }} />}
           />
+          <Route path="/admin" element={<AdminPage {...{}} />} />
           <Route
             path="/shop"
             element={<ProductList {...{ basketState, items: blanks }} />}
