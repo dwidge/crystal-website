@@ -16,14 +16,10 @@ export const BasketPage: React.FC<{
   return (
     <div className="flex column gap pad">
       <BasketListView {...{ value: basketState, total }} />
-      <BasketTotals {...{ basket: basketList }} />
-      {valid ? (
-        <Link className="button text-center" to="/checkout">
-          Checkout
-        </Link>
-      ) : (
-        "⚠️ Please choose an image for each item"
-      )}
+      {valid ? "" : "⚠️ Please choose an image for each item"}
+      <Link className="button text-center" to="/checkout">
+        Checkout
+      </Link>
     </div>
   );
 };

@@ -66,7 +66,7 @@ export function App() {
             </h2>
           </section>
           <section>
-            <nav role="navigation" className="row gap">
+            <nav role="navigation" className="row gap wrap">
               <Link to="/">Gallery</Link>
               <Link to="/shop">Shop</Link>
               <Link to="/basket">Basket</Link>

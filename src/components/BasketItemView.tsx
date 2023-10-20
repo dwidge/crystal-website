@@ -9,9 +9,9 @@ export const BasketItemView: React.FC<{
   value: State<BasketItem>;
 }> = ({ value: [value, setValue] }) => {
   return (
-    <div className="basket-item semidark pad gap">
+    <div className="flex column basket-item semidark pad gap">
       <h3>{value.product.name}</h3>
-      <div className="flex row spaced gap">
+      <div className="flex row spaced gap wrap">
         <ProductView {...{ value: value.product }} />
         <ImageView
           value={[
@@ -42,12 +42,12 @@ export const BasketItemView: React.FC<{
           {value.product.price} = {app.currency}
           {value.product.price * value.quantity}
         </div>
-        <div>Weight</div>
+        {/* <div>Weight</div>
         <div className="right">
           {value.product.weight} * {value.quantity}
           {" = "}
           {value.product.weight * value.quantity}g
-        </div>
+        </div> */}
       </div>
     </div>
   );

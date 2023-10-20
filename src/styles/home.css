@@ -4,7 +4,9 @@
 *:after {
   box-sizing: border-box;
 }
-html {
+html,
+input,
+textarea {
   font-family: Open Sans;
   font-size: 20px;
 }
@@ -203,6 +205,13 @@ button {
   bottom: 0;
   left: 0;
   right: 0;
+}
+input,
+textarea {
+  width: 100%;
+}
+textarea {
+  resize: vertical;
 }
 img {
   width: 100%;

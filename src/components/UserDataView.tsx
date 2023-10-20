@@ -17,7 +17,7 @@ export const UserDataView: React.FC<{
 
   return (
     <div className="flex column gap user-info">
-      <div className="flex row gap">
+      <div className="flex row gap wrap spaced">
         <label htmlFor="name">Name</label>
         <input
           className="flex"
@@ -30,7 +30,7 @@ export const UserDataView: React.FC<{
         />
       </div>
 
-      <div className="flex row gap">
+      <div className="flex row gap wrap spaced">
         <label htmlFor="email">Email</label>
         <input
           className="flex"
