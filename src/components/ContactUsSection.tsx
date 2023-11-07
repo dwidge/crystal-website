@@ -1,5 +1,5 @@
 import React from "react";
-import { app } from "../config.js";
+import { config } from "../config.js";
 
 export function ContactUsSection() {
   return (
@@ -9,8 +9,8 @@ export function ContactUsSection() {
           <h2>Contact us</h2>
         </div>
         <div className="center">
-          <div>{app.email}</div>
-          <div>{app.phone}</div>
+          <div>{config.app.email}</div>
+          <div>{config.app.phone}</div>
           <div>We deliver countrywide</div>
         </div>
       </div>

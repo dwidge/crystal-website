@@ -1,5 +1,5 @@
 import React from "react";
-import * as config from "../config.js";
+import { config } from "../config.js";
 import { ApiProvider } from "../api/api.js";
 import { App } from "./App.js";
 

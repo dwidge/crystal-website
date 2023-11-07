@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import { Home } from "./Home.js";
 import "../styles/reset.css";
 import "../styles/home.css";
-import * as config from "../config.js";
+import { config } from "../config.js";
 import { BasketPage } from "./BasketPage.js";
 import { BasketList } from "../types/BasketList.js";
 import { CheckoutForm } from "./CheckoutForm.js";
-import { blanks } from "../utils/blanks.js";
-import { samples } from "../utils/samples.js";
+import { useBlanks } from "../utils/blanks.js";
+import { useSamples } from "../utils/samples.js";
 import { UserData } from "../types/UserData.js";
 import { randId } from "../utils/randId.js";
 import { useIsValidBasket } from "./useIsValidBasket.js";
@@ -56,8 +56,11 @@ export function App() {
     .map((value) => value.product.price * value.quantity)
     .reduce(sum, 0);
 
+  const blanks = useBlanks().data;
+  const samples = useSamples().data;
+
   return (
-    <Router basename={config.app.root}>
+    <Router basename={config.app.rootUrl}>
       <div className="flex column light wide shadow">
         <section className="flex0 row spaced wrap dark pad">
           <section>

@@ -1,6 +1,6 @@
 import React from "react";
 import { BasketList } from "../types/BasketList.js";
-import { app } from "../config.js";
+import { config } from "../config.js";
 import { getTotalPrice, getTotalWeight } from "./getTotal.js";
 
 export function BasketTotals({ basket }: { basket: BasketList }) {
@@ -13,7 +13,7 @@ export function BasketTotals({ basket }: { basket: BasketList }) {
       </div>
       <div>Total Price</div>
       <div className="right">
-        {app.currency}
+        {config.app.currency}
         {getTotalPrice(basket.items).toFixed(2)}
       </div>
       <div>Total Weight</div>

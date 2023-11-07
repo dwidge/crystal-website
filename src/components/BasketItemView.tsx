@@ -3,7 +3,7 @@ import { BasketItem } from "../types/BasketItem.js";
 import { ImageView } from "./ImageView.js";
 import { State } from "../types/State.js";
 import { ProductView } from "./ProductView.js";
-import { app } from "../config.js";
+import { config } from "../config.js";
 
 export const BasketItemView: React.FC<{
   value: State<BasketItem>;
@@ -38,8 +38,8 @@ export const BasketItemView: React.FC<{
         </div>
         <div>Price</div>
         <div className="right">
-          {value.quantity} * {app.currency}
-          {value.product.price} = {app.currency}
+          {value.quantity} * {config.app.currency}
+          {value.product.price} = {config.app.currency}
           {value.product.price * value.quantity}
         </div>
         {/* <div>Weight</div>

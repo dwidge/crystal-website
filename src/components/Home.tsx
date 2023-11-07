@@ -6,7 +6,7 @@ import { EveryOccasionSection } from "./EveryOccasionSection.js";
 import { CaptureMemoriesSection } from "./CaptureMemoriesSection.js";
 import { Product } from "../types/Product.js";
 import { Carousel } from "./Carousel.js";
-import { app } from "../config.js";
+import { config } from "../config.js";
 
 export const Home: React.FC<{
   basketState: State<BasketList>;
@@ -18,7 +18,7 @@ export const Home: React.FC<{
       <Carousel
         {...{
           imgs: items.map((item) => ({
-            src: app.root + "/data/" + item.imageId,
+            src: config.app.dataUrl + "/" + item.imageId,
             alt: item.name,
           })),
         }}
