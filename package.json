@@ -19,11 +19,11 @@
     "dist"
   ],
   "scripts": {
-    "deploy": "npm run build && gh-pages -d build",
+    "deploy": "npm run build && gh-pages -d dist",
     "dist": "rimraf dist && tsc -p lib",
-    "start": "servey src=src/index.ts env=PUBLIC_ dir=public out=build port=3000",
-    "build": "buildy src=src/index.ts env=PUBLIC_ dir=public out=build",
-    "serve": "http-server build -o -c-1 -p3000",
+    "start": "servey src=src/index.ts env=PUBLIC_ dir=public out=dist port=3000",
+    "build": "buildy src=src/index.ts env=PUBLIC_ dir=public out=dist",
+    "serve": "http-server dist -o -c-1 -p3000",
     "test": "node --loader ts-node/esm --test",
     "doc": "typedoc --out docs --entryPointStrategy expand src lib && http-server docs -o -c-1 -p0",
     "dev": "cross-env NODE_ENV=development NODE_OPTIONS=\"-r dotenv/config\" DOTENV_CONFIG_PATH=.env.local npm run",
