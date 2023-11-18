@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { config } from "../config.js";
 import { Product } from "../types/Product.js";
 
-console.log(config.app.dataUrl + "/blanks.json");
-
 const dataItems = fetch(config.app.dataUrl + "/blanks.json")
   .then((r) => r.json())
   .then(
