@@ -8,3 +8,5 @@
 /.env*
 /public/data/
 /src/data/
+/.wrangler
+/wrangler.toml
