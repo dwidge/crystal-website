@@ -1,19 +1,30 @@
-import { gql, useQuery } from "@apollo/client";
+import { useEffect, useState } from "react";
+import { useApi } from "./api.js";
+import { Order } from "../types/Order.js";
 
-export function getOrders(): {
-  loading: boolean;
+export function useGetOrders(where: Partial<Order> = {}): {
+  busy: boolean;
   error?: string;
-  data?: { id: string; firstName: string }[];
+  data?: Order[];
 } {
-  const { loading, error, data } = useQuery(
-    gql`
-      query GetOrders {
-        orders {
-          id
-          firstName
-        }
-      }
-    `
-  );
-  return { loading, error: error?.message, data: data?.orders };
+  const baseUrl = useApi();
+  const [busy, setBusy] = useState(false);
+  const [data, setData] = useState<Order[]>();
+  const [error, setError] = useState<Error>();
+  useEffect(() => {
+    setBusy(true);
+    fetch(baseUrl + "/orders", {
+      method: "post",
+      body: JSON.stringify(Order.partial().parse(where)),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((r) => r.json())
+      .then((v) => setData(Order.array().parse(v)))
+      .catch(setError)
+      .then(() => setBusy(false));
+  }, []);
+  return { busy, error: error?.message, data: data };
 }

@@ -16,6 +16,7 @@ import { sum } from "../utils/sum.js";
 import { ProductList } from "./ProductList.js";
 import { ContactUsSection } from "./ContactUsSection.js";
 import { AdminPage } from "./AdminPage.js";
+import { useCreateOrders } from "../api/createOrders.js";
 
 export function App() {
   const submitted = useState<boolean>(false);
@@ -58,6 +59,7 @@ export function App() {
 
   const blanks = useBlanks().data;
   const samples = useSamples().data;
+  const createOrders = useCreateOrders();
 
   return (
     <Router basename={config.app.rootUrl}>
@@ -102,6 +104,9 @@ export function App() {
                   submitted,
                   total,
                 }}
+                onSubmit={(customer, basket) =>
+                  createOrders.trigger([{ ...basket, customer }])
+                }
               />
             }
           />
