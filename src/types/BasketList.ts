@@ -1,7 +1,9 @@
+import z from "zod";
 import { BasketItem } from "./BasketItem.js";
 
-export interface BasketList {
-  id: string;
-  items: BasketItem[];
-  total: number;
-}
+export const BasketList = z.object({
+  id: z.string(),
+  items: BasketItem.array(),
+  total: z.number(),
+});
+export type BasketList = z.infer<typeof BasketList>;
