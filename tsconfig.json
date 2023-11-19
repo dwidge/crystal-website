@@ -12,5 +12,6 @@
     "target": "ESNext"
   },
   "include": ["src/**/*", "lib/**/*"],
+  "exclude": ["functions/**/*"],
   "ts-node": { "esm": true }
 }
