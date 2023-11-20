@@ -10,3 +10,4 @@
 /src/data/
 /.wrangler
 /wrangler.toml
+.aider*
