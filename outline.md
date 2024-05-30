@@ -32,7 +32,7 @@ This is a simple React web application that allows users to browse a list of pro
 6. **BasketItem Component**
 
    - Receives a single item from the basket as a prop from the `Basket` component.
-   - Displays the item's details, quantity, uploaded image, and subtotal cost.
+   - Displays the item's details, quantity, uploaded image, and price cost.
 
 7. **CheckoutForm Component**
 

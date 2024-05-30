@@ -1,4 +1,4 @@
-/node_modules
+node_modules
 /dist
 /docs
 /dist
@@ -8,5 +8,7 @@
 /.env*
 /public/data/
 /src/data/
-/.wrangler
+.wrangler
 /wrangler.toml
+.aider*
+.dev.vars

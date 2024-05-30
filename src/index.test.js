@@ -1,4 +1,4 @@
-import { describe, test } from "node:test";
+import { describe, test } from "vitest";
 import { expect } from "expect";
 
 describe("test", () => {

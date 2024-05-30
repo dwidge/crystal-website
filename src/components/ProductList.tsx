@@ -25,7 +25,7 @@ export const ProductList: React.FC<{
                       product: item,
                       image: Promise.resolve(undefined),
                       quantity: 1,
-                      subtotal: 1,
+                      price: 1,
                     },
                   ]),
                 })

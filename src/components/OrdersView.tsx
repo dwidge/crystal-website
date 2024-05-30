@@ -7,10 +7,10 @@ export function OrdersView() {
   if (busy) return <p>Loading...</p>;
   if (error) return <p style={{ color: "red" }}>{error}</p>;
 
-  return data?.map(({ id, customer }) => (
+  return data?.map(({ id, user: user }) => (
     <div key={id}>
       <p>{id}</p>
-      <p>{customer.name}</p>
+      <p>{user.name}</p>
       <br />
     </div>
   ));

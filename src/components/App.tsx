@@ -35,17 +35,18 @@ export function App() {
       //   id: "test1",
       //   image: Promise.resolve(undefined),
       //   quantity: 1,
-      //   subtotal: 0,
+      //   price: 0,
       // },
       // {
       //   product: products[0],
       //   id: "test2",
       //   image: Promise.resolve(undefined),
       //   quantity: 1,
-      //   subtotal: 0,
+      //   price: 0,
       // },
     ],
     total: 0,
+    createDate: new Date().toISOString(),
   });
 
   const [basketList] = basketState;
@@ -54,7 +55,7 @@ export function App() {
   }, [userState[0], basketList]);
   const valid = useIsValidBasket(basketList);
   const total = basketList.items
-    .map((value) => value.product.price * value.quantity)
+    .map((value) => (value.product ? value.product.price * value.quantity : 0))
     .reduce(sum, 0);
 
   const blanks = useBlanks().data;
@@ -104,8 +105,8 @@ export function App() {
                   submitted,
                   total,
                 }}
-                onSubmit={(customer, basket) =>
-                  createOrders.trigger([{ ...basket, customer }])
+                onSubmit={(user, basket) =>
+                  createOrders.trigger([{ ...basket, user: user }])
                 }
               />
             }
