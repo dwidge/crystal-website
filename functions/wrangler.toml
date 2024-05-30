@@ -1,0 +1,10 @@
+name = "" # todo
+main = "./index.ts"
+compatibility_date = "2022-10-10"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "dev"
+database_id = "42e19718-12a1-4e28-8c40-0226781fd3e8"
+preview_database_id = "DB"
+migrations_dir = "migrations"
