@@ -25,7 +25,7 @@
     "build": "buildy src=src/index.ts env=PUBLIC_ dir=public out=dist",
     "serve": "http-server dist -o -c-1 -p3000",
     "test": "node --loader ts-node/esm --test",
-    "pages:dev": "npx wrangler pages dev --compatibility-date=2023-10-30 -- npm run start",
+    "pages:dev": "wrangler pages dev --compatibility-date=2023-10-30 -- npm run start",
     "doc": "typedoc --out docs --entryPointStrategy expand src lib && http-server docs -o -c-1 -p0",
     "dev": "cross-env NODE_ENV=development NODE_OPTIONS=\"-r dotenv/config\" DOTENV_CONFIG_PATH=.env.local npm run",
     "prod": "cross-env NODE_ENV=production NODE_OPTIONS=\"-r dotenv/config\" DOTENV_CONFIG_PATH=.env npm run"
@@ -58,6 +58,7 @@
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
     "typedoc": "^0.25.0",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "wrangler": "^3.57.2"
   }
 }

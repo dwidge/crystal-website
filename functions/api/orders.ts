@@ -19,8 +19,8 @@ export const onRequest: PagesFunction<Env> = async (context) => {
     });
   }
 
-  const where = Order.partial().parse(await context.request.json());
-  console.log("where1", where);
+  // const where = Order.partial().parse(await context.request.json());
+  // console.log("where1", where);
   // const ps = context.env.DB.prepare("SELECT * from orders");
   // const order = await ps.first();
   // console.log("order1", { order });
